@@ -36,15 +36,12 @@ namespace Q101.ExcelLoader.Concrete
         /// <returns></returns>
         public ExcelSheetModel ConvertSheet(ExcelWorksheet sheet)
         {
-            // 604049
             var rows = new List<ExcelRowModel>(sheet.Cells.Rows);
-            //int rowsCount = sheet. .Cells.Rows; //sheet.Dimension.Rows;
-            // int columnsCount = sheet.Cells.Columns;// .Dimension.End.Column; //sheet.Dimension.Columns;
-
-
+ 
             var cells = sheet.Cells;
 
             cells.Reset();
+
             int previosRowIndex = 1;
 
             var currentCells = new List<ExcelCellModel>();
