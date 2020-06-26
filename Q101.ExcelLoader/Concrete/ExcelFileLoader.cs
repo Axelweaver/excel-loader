@@ -48,6 +48,7 @@ namespace Q101.ExcelLoader.Concrete
 
             var currentRow = new ExcelRowModel
             {
+                RowIndex = 1,
                 Cells = currentCells
             };
             rows.Add(currentRow);
@@ -57,17 +58,21 @@ namespace Q101.ExcelLoader.Concrete
                 if (cells.Current.Start.Row > previosRowIndex)
                 {
                     currentCells = new List<ExcelCellModel>();
-
+                    
                     currentRow = new ExcelRowModel
                     {
+                        RowIndex = cells.Current.Start.Row,
                         Cells = currentCells
                     };
                     rows.Add(currentRow);
                 }
-
+                
                 var currentCell = new ExcelCellModel
                 {
-                    Value = cells.Current.Value
+                    ColumnIndex = cells.Current.Start.Column,
+                    Value = cells.Current.Value,
+                    Address = cells.Current.Address,
+                    FullAddress = cells.Current.FullAddress
                 };
 
                 currentCells.Add(currentCell);
@@ -77,6 +82,7 @@ namespace Q101.ExcelLoader.Concrete
 
             var sheetModel = new ExcelSheetModel
             {
+                SheetName = sheet.Name,
                 Rows = rows
             };
 

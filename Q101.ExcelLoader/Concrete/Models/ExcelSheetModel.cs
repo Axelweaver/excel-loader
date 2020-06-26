@@ -8,6 +8,11 @@ namespace Q101.ExcelLoader.Concrete.Models
     public class ExcelSheetModel
     {
         /// <summary>
+        /// Наименование листа
+        /// </summary>
+        public string SheetName { get; set; }
+
+        /// <summary>
         /// Строки этого листа
         /// </summary>
         public IEnumerable<ExcelRowModel> Rows { get; set; }
