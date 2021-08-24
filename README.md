@@ -13,7 +13,7 @@ This assembly (class library) allows you to download the MS Excel file (.xlsx) a
  To install this assembly (class library) on the package manager console tab, run the following command:
 ```bash
 
-    Install-Package Q101.ExcelLoader -Version 1.0.2
+    Install-Package Q101.ExcelLoader -Version 1.0.3
 
 ```
 
